@@ -1,0 +1,32 @@
+{% extends 'warcraft_app/base.html' %}
+{% load static %}
+{% block link %}
+  <style>
+    .main-div {
+      background-image: url("{% static 'warcraft_app/images/wallpaper_videos.jpg' %}");
+      min-height: 100vh;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    span {
+      color: red;
+    }
+  </style>
+{% endblock link %}
+{% block content %}
+  <div class="root-div d-flex">
+    {% include 'warcraft_app/videos_sidebar.html' %}
+    <div class="main-div flex-grow-1">
+      <h1 class="text-center">
+        <span>В</span>идео
+      </h1>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'warcraft_app/base.html' %}
+{% load static %}
+{% block link %}
+  <style>
+    .main-div {
+      background-image: url("{% static 'warcraft_app/images/wallpaper.jpg' %}");
+      min-height: 100vh;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    span {
+      color: red;
+    }
+  </style>
+{% endblock link %}
+{% block content %}
+  <div class="main-div d-flex justify-content-center flex-column">
+    <h1 class="text-center align-items-center">
+      <span>Г</span>лавная <span>С</span>траница
+    </h1>
+  </div>
+{% endblock content %}

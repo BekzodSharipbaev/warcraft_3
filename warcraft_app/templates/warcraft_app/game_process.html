@@ -1,0 +1,25 @@
+{% extends 'warcraft_app/base.html' %}
+{% block content %}
+  <div class="root-div d-flex">
+    {% include 'warcraft_app/videos_sidebar.html' %}
+    <div class="main-div flex-grow-1">
+      <h1 class="text-center m-2">
+        Игровой процесс
+      </h1>
+      {% for video in videos %}
+        <div class="d-inline-grid m-4 p-3">
+          <div class="card" style="width: 400; height: 350;">
+            <video width="400" height="350" controls>
+              <source src="{{ video.video.url }}" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                {{ video.title }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

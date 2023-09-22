@@ -1,0 +1,41 @@
+{% extends 'warcraft_app/base.html' %}
+{% load static %}
+{% block link %}
+  <style>
+    .main-div {
+      background-image: url("{% static 'warcraft_app/images/wallpaper_screen.jpg' %}");
+      min-height: 100vh;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      color: white;
+    }
+
+    span {
+      color: red;
+    }
+  </style>
+{% endblock link %}
+{% block content %}
+  <div class="main-div">
+    <h1 class="text-center">
+      <span>С</span>криншоты
+    </h1>
+    {% for screenshot in screenshots %}
+      <div class="d-inline-grid m-4 p-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ screenshot.screenshot.url }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ screenshot.title }}
+            </h5>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'warcraft_app/base.html' %}
+{% block content %}
+  <div class="root-div d-flex">
+    {% include 'warcraft_app/audios_sidebar.html' %}
+    <div class="main-div flex-grow-1">
+      <h1 class="text-center">
+        <span>Ц</span>итаты  <span>П</span>ерсонажей
+      </h1>
+      {% for audio in audios %}
+        <div class="d-inline-grid m-4 p-3">
+          <div class="card" style="width: 18rem;">
+            <audio controls>
+              <source src="{{ audio.audio.url }}" type="audio/mp3" />
+            </audio>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{ audio.title }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
